@@ -7,7 +7,7 @@ class PeopleComponent extends React.Component{
         people: []
     }
     componentDidMount(){
-        axios.get('http://ec2-54-173-189-209.compute-1.amazonaws.com:4000/getusers')
+        axios.get('http://ec2-54-204-217-221.compute-1.amazonaws.com:4000/getusers')
             .then((res) => {
                 this.setState({people: res.data})
             })
@@ -30,7 +30,7 @@ class PeopleComponent extends React.Component{
                     .map((person, index) =>
                         <tr>
                             <th key={person.id}>{index+1}</th>
-                            <td><img src={`http://ec2-54-173-189-209.compute-1.amazonaws.com:4000/${person.profilePhoto}`} className="img-fluid" style={{width: 70 + 'px', height: 70 + 'px', borderRadius: 50 + 'px'}}/></td>
+                            <td><img src={`http://ec2-54-204-217-221.compute-1.amazonaws.com:4000/${person.profilePhoto}`} className="img-fluid" style={{width: 70 + 'px', height: 70 + 'px', borderRadius: 50 + 'px'}}/></td>
                             <td>{person.fullname}</td>
                             <td>{person.bio}</td>
                         </tr>
