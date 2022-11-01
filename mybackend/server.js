@@ -7,12 +7,15 @@ const app = express();
 const cors = require('cors');
 const multer = require('multer');
 const axios = require('axios');
+require('dotenv').config();
+
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
+
   app.use(cors({
-    origin: "http://127.0.0.1:3000",
+    origin: `http://${process.env.DNS}:3000`,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true

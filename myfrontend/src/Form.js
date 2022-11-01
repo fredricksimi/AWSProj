@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+require('dotenv').config();
 
 function RegistrationForm() {
     const changeHandler = (e) => {
@@ -13,7 +14,7 @@ function RegistrationForm() {
         e.preventDefault()
         const bodyFormData = new FormData(e.target);
         let formObject=Object.fromEntries(bodyFormData.entries());
-        axios.post('http://127.0.0.1:4000/upload', bodyFormData)
+        axios.post(`http://${process.env.DNS}:4000/upload`, bodyFormData)
         e.target.reset()
     }
     return (
