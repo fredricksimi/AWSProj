@@ -8,7 +8,7 @@ class ArticleComponent extends React.Component{
         articles: []
     }
     componentDidMount(){
-        axios.get(`http://${process.env.DNS}:4000/spacedata`)
+        axios.get(`http://${process.env.REACT_APP_DNS}:4000/spacedata`)
             .then((res) => {
                 console.log(res)
                 this.setState({articles: res.data})

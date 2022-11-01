@@ -14,7 +14,7 @@ function RegistrationForm() {
         e.preventDefault()
         const bodyFormData = new FormData(e.target);
         let formObject=Object.fromEntries(bodyFormData.entries());
-        axios.post(`http://${process.env.DNS}:4000/upload`, bodyFormData)
+        axios.post(`http://${process.env.REACT_APP_DNS}:4000/upload`, bodyFormData)
         e.target.reset()
     }
     return (

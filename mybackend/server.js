@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
   app.use(cors({
-    origin: `http://${process.env.DNS}:3000`,
+    origin: `http://${process.env.REACT_APP_DNS}:3000`,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true
