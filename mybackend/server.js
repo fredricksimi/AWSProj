@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 
   app.use(cors({
-    origin: "http://ec2-3-87-146-210.compute-1.amazonaws.com:3000",
+    origin: "http://ec2-54-173-189-209.compute-1.amazonaws.com:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true
