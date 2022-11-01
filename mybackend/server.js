@@ -7,7 +7,6 @@ const app = express();
 const cors = require('cors');
 const multer = require('multer');
 const axios = require('axios');
-require('dotenv').config();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -15,7 +14,7 @@ app.use(bodyParser.json());
 
 
   app.use(cors({
-    origin: `http://${process.env.REACT_APP_DNS}:3000`,
+    origin: "http://ec2-3-81-235-150.compute-1.amazonaws.com:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true

@@ -1,14 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios'
-require('dotenv').config();
 
 class ArticleComponent extends React.Component{
     state = {
         articles: []
     }
     componentDidMount(){
-        axios.get(`http://${process.env.REACT_APP_DNS}:4000/spacedata`)
+        axios.get('http://ec2-3-81-235-150.compute-1.amazonaws.com:4000/spacedata')
             .then((res) => {
                 console.log(res)
                 this.setState({articles: res.data})
