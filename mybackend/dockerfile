@@ -1,0 +1,12 @@
+FROM node:16.18.0-alpine
+
+ENV MONGO_DB_USERNAME=admin \
+    MONGO_DB_PWD=password
+
+WORKDIR /usr/src/backend
+
+COPY . ./
+RUN mkdir ProfilePhotos && npm install
+EXPOSE 4000
+
+CMD [ "node", "server.js" ]
