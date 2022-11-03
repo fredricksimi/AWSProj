@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 
   app.use(cors({
-    origin: "http://ec2-3-93-240-112.compute-1.amazonaws.com:3000",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     preflightContinue: false,
     credentials: true
@@ -46,7 +46,7 @@ let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
 
 app.post('/upload', upload.single('urlpromo'), (req, res) => {
-  MongoClient.connect('mongodb://admin:password@mongodb', mongoClientOptions, function (err, client) {
+  MongoClient.connect('mongodb://admin:password@mongodb:27017', mongoClientOptions, function (err, client) {
     if (err) throw err;
     let db = client.db('my_users_db');
     let myquery = {
@@ -64,7 +64,7 @@ app.post('/upload', upload.single('urlpromo'), (req, res) => {
 });
 
 app.get('/getusers', (req, res) => {
-  MongoClient.connect('mongodb://admin:password@mongodb', function(err, db) {
+  MongoClient.connect('mongodb://admin:password@mongodb:27017', function(err, db) {
     if (err) throw err;
     var dbo = db.db("my_users_db");
     dbo.collection("users_collection").find({}).toArray(function(err, result) {

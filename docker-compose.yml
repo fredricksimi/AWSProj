@@ -9,6 +9,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
   mongo-express:
     image: mongo-express
+    restart: always
     depends_on:
       - mongodb
     ports:

@@ -13,7 +13,7 @@ function RegistrationForm() {
         e.preventDefault()
         const bodyFormData = new FormData(e.target);
         let formObject=Object.fromEntries(bodyFormData.entries());
-        axios.post('http://ec2-3-93-240-112.compute-1.amazonaws.com:4000/upload', bodyFormData)
+        axios.post('http://127.0.0.1:4000/upload', bodyFormData)
         e.target.reset()
     }
     return (
