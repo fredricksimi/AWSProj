@@ -10,7 +10,6 @@ services:
   mongo-express:
     image: mongo-express
     restart: always
-    restart: always
     depends_on:
       - mongodb
     ports:
